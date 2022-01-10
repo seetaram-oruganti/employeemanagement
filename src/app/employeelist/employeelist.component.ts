@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Employee } from '../employee';
 import { NgserviceService } from '../ngservice.service';
 
@@ -8,6 +9,7 @@ import { NgserviceService } from '../ngservice.service';
   templateUrl: './employeelist.component.html',
   styleUrls: ['./employeelist.component.css']
 })
+
 export class EmployeelistComponent implements OnInit {
 
 
@@ -26,7 +28,7 @@ export class EmployeelistComponent implements OnInit {
 
   getEmployees() {
     this.service.fetchEmployeeListFromRemote().subscribe(
-      data => this.employees = data, error => console.log("Exception occurred 1"),
+      data => this.employees = data, error => console.log("Exception occurred !"),
     )
   }
 
@@ -54,15 +56,15 @@ export class EmployeelistComponent implements OnInit {
 
   }
 
-  deleteEmployee(id: number) {
-    if (confirm('Are you sure ?'))
-  return this.service.deleteEmployeeByIdFromRemote(id).subscribe(
-    success =>{
-      ("Product deleted succesfully");
-    },
-    error=> {console.log("Exception occured 2"); this.getEmployees()}
-   )
-  }
+  // deleteEmployee(id: number){
+  //   if (confirm('Are you sure ?'))
+  // return this.service.deleteEmployeeByIdFromRemote(id).subscribe(
+  //   success =>{
+  //     ("Product deleted succesfully");
+  //   },
+  //   error=> {console.log("Exception occured 2"); this.getEmployees()}
+  //  )
+  // }
 
 
 }

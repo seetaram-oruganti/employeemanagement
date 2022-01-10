@@ -14,14 +14,14 @@ export class ViewemployeeComponent implements OnInit {
   constructor(private route:Router, private service: NgserviceService, private activatedRouter: ActivatedRoute) { }
 
   ngOnInit(): void {
-    let id = parseInt(this.activatedRouter.snapshot.paramMap.get('id'));
-    this.service.fetchEmployeeByIdFromRemote(id).subscribe(
-    data=>{
-      console.log("data received");
-      this.employee = data;
-    },
-      error => console.log("Exception Occured")
-    )
+    // let id = parseInt(this.activatedRouter.snapshot.paramMap.get('id'));
+    // this.service.fetchEmployeeByIdFromRemote(id).subscribe(
+    // data=>{
+    //   console.log("data received");
+    //   this.employee = data;
+    // },
+    //   error => console.log("Exception Occured")
+    // )
   } 
 
   gotolist() {

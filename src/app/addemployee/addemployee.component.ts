@@ -10,6 +10,7 @@ import { Employee } from '../employee';
   templateUrl: './addemployee.component.html',
   styleUrls: ['./addemployee.component.css']
 })
+
 export class AddemployeeComponent implements OnInit {
 
   employee = new Employee();
